@@ -172,6 +172,7 @@ func (a *RESTActivity) Eval(context activity.Context) (done bool, err error) {
 	var result interface{}
 
 	d := json.NewDecoder(bytes.NewReader(respBody))
+
 	d.UseNumber()
 	err = d.Decode(&result)
 
