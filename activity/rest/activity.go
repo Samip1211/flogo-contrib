@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"crypto/tls"
 	"encoding/json"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -176,8 +177,8 @@ func (a *RESTActivity) Eval(context activity.Context) (done bool, err error) {
 	d.UseNumber()
 	err = d.Decode(&result)
 
-	//json.Unmarshal(respBody, &result)
-
+	//
+	fmt.Println(result)
 	log.Debug("response Body:", result)
 
 	context.SetOutput(ovResult, result)
